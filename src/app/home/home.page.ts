@@ -9,4 +9,11 @@ export class HomePage {
 
   constructor() {}
 
+  setClass(){
+    let classes = {
+      ionItemSliding: true
+    }
+    return classes;
+  }
+
 }
