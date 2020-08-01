@@ -7,33 +7,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add" [routerLink]="['/add-posts']"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-list lines="none">
     <ion-item-sliding class="no-padding">
-      <ion-item>
+      <ion-item *ngFor="let post of posts">
         <ion-label>
-          <h2>Title</h2>
-          <p>Details</p>
-        </ion-label>
-      </ion-item>
-
-      <ion-item-options side="start">
-        <ion-item-option>
-          <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-
-      <ion-item-options side="end">
-        <ion-item-option color="danger">
-          <ion-icon slot="icon-only" name="trash"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-
-    <ion-item-sliding class="no-padding">
-      <ion-item>
-        <ion-label>
-          <h2>Title</h2>
-          <p>Details</p>
+          <h2>{{post.title}}</h2>
+          <p>{{post.details}}</p>
         </ion-label>
       </ion-item>
 
